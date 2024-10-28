@@ -5,7 +5,7 @@ This a Experiment Kotlin Language Server on Acode
 
 ## Acode Plugin Requiriment Installed
 
-1. [Acode Language Client](https://acode.app/plugin/acode.language.client) for kotlin Autocomplete
+1. [Acode Language Client](https://acode.app/plugin/acode.language.client) for Library kotlin Autocomplete
 
 ## Setup
 
