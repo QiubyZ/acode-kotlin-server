@@ -1,0 +1,17 @@
+{
+  "id": "acode.kotlin.client",
+  "name": "Kotlin Language Client",
+  "main": "dist/main.js",
+  "version": "1.0.0",
+  "readme": "readme.md",
+  "icon": "icon.png",
+  "files": ["settings.jpg"],
+  "minVersionCode" : 290,
+  "price": 0,
+  
+  "author":{
+    "name":"QiubyZ Zhukhi",
+    "email":"qzhukhi@gmail.com",
+    "github":"QiubyZ"
+  }
+}
