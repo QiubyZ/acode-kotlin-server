@@ -29,8 +29,7 @@ This a Experiment Kotlin Language Server on Acode
   }
   ```
 
-![Example](./settings.jpg)
-
-    if you not setting. this will take automatically Default serverPath/Default Settings
-    is neovim Path bin language server
-    */data/data/com.termux/files/home/.local/share/nvim/mason/bin/kotlin-language-server*
+  ![Example](./settings.jpg)
+  if you not setting. this will take automatically Default serverPath/Default Settings
+  is neovim Path bin language server
+  _/data/data/com.termux/files/home/.local/share/nvim/mason/bin/kotlin-language-server_
