@@ -1,5 +1,4 @@
 # These are supported funding model platforms
 
-github: QiubyZ
-open_collective: nextauth
+github: ["QiubyZ"]
 custom: ["https://trakteer.id/qiubyzhukhi"]
