@@ -20,4 +20,4 @@ jobs:
           draft: false
           prerelease: false
           generate_release_notes: false
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
