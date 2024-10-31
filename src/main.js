@@ -6,7 +6,7 @@ class AcodePlugin {
       this.setupLangaugeClient(acodeLanguageClient);
     } else {
       window.addEventListener("plugin.install", ({ detail }) => {
-        if (detail.name === "acode-language-client") {
+        if (detail.name == "acode-language-client") {
           acodeLanguageClient = acode.require("acode-language-client");
           this.setupLangaugeClient(acodeLanguageClient);
         }
