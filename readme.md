@@ -1,5 +1,7 @@
-# Acode Kotlin Language Client
 
+<script type='text/javascript' src='https://cdn.trakteer.id/js/embed/trbtn.min.js?date=18-11-2023'></script><script type='text/javascript'>(function(){var trbtnId=trbtn.init('Dukung Saya di Trakteer','#be1e2d','https://trakteer.id/qiubyzhukhi','https://cdn.trakteer.id/images/embed/trbtn-icon.png?date=18-11-2023','40');trbtn.draw(trbtnId);})();</script>
+
+# Acode Kotlin Language Server 
 This a Experiment Plugin Kotlin Language Server on Acode
 
 ## Acode Plugin Requiriment Installed
@@ -33,3 +35,6 @@ This a Experiment Plugin Kotlin Language Server on Acode
   if you not setting. this will take automatically Default serverPath/Default Settings
   is neovim Path bin language server
   _/data/data/com.termux/files/home/.local/share/nvim/mason/bin/kotlin-language-server_
+
+
+
