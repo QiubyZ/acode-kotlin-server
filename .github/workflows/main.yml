@@ -5,8 +5,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      GITHUB_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v3
       - name: Build Script
@@ -22,5 +20,4 @@ jobs:
           draft: false
           prerelease: false
           generate_release_notes: false
-        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
