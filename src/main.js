@@ -1,10 +1,4 @@
 import plugin from "../plugin.json";
-
-let url = acode.require("url");
-// let plugin = {
-//   id: "acode.kotlin.client",
-// };
-//
 class AcodePlugin {
   async init() {
     let acodeLanguageClient = acode.require("acode-language-client");
@@ -28,7 +22,7 @@ class AcodePlugin {
       socket,
     });
     acodeLanguageClient.registerService("kotlin|kts", javaClient);
-    acode.registerFormatter("Kotlin Language Client", ["kotlin"], () =>
+    acode.registerFormatter("Kotlin Language Server", ["kotlin"], () =>
       acodeLanguageClient.format(),
     );
   }
@@ -77,7 +71,7 @@ class AcodePlugin {
     };
   }
 
-  async destroy() {}
+  async destroy() { }
 }
 
 if (window.acode) {
