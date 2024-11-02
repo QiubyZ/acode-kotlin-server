@@ -27,7 +27,7 @@ This a Experiment Plugin Kotlin Language Server on Acode.
   Example:
 
   ```json
-    "acode.kotlin.client": {
+    "acode.kotlin.server": {
       "serverPath": "/data/data/com.termux/files/home/server/bin/kotlin-language-server"
   }
   ```

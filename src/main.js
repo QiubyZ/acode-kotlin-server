@@ -3,7 +3,7 @@ class AcodePlugin {
   async init() {
     let acodeLanguageClient = acode.require("acode-language-client");
     if (acodeLanguageClient) {
-      this.setupLangaugeClient(acodeLanguageClient);
+      await this.setupLangaugeClient(acodeLanguageClient);
     } else {
       window.addEventListener("plugin.install", ({ detail }) => {
         if (detail.name == "acode-language-client") {
@@ -13,7 +13,7 @@ class AcodePlugin {
       });
     }
   }
-  setupLangaugeClient(acodeLanguageClient) {
+  async setupLangaugeClient(acodeLanguageClient) {
     let socket = (this.socket = acodeLanguageClient.getSocketForCommand(
       this.settings.serverPath,
     ));
@@ -21,7 +21,7 @@ class AcodePlugin {
       type: "socket",
       socket,
     });
-    acodeLanguageClient.registerService("kotlin|kts", javaClient);
+    acodeLanguageClient.registerService("kotlin", javaClient);
     acode.registerFormatter("Kotlin Language Server", ["kotlin"], () =>
       acodeLanguageClient.format(),
     );
@@ -44,33 +44,6 @@ class AcodePlugin {
         "/data/data/com.termux/files/home/.local/share/nvim/mason/bin/kotlin-language-server",
     };
   }
-
-  get settingsObject() {
-    const AppSettings = acode.require("settings");
-    return {
-      list: [
-        {
-          key: "serverPath",
-          text: "Path to Java jdtls server",
-          prompt: "Path to Java jdtls server",
-          promptType: "text",
-          value: this.settings.serverPath,
-        },
-      ],
-      cb: (key, value) => {
-        switch (key) {
-          case "serverPath":
-            if (!value.endsWith("")) {
-              value = value + "/";
-            }
-            break;
-        }
-        AppSettings.value[plugin.id][key] = value;
-        AppSettings.update();
-      },
-    };
-  }
-
   async destroy() { }
 }
 
