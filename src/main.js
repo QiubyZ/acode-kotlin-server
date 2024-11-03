@@ -1,4 +1,6 @@
 import plugin from "../plugin.json";
+let AppSettings = acode.require("settings");
+
 class AcodePlugin {
   async init() {
     let acodeLanguageClient = acode.require("acode-language-client");
@@ -26,11 +28,31 @@ class AcodePlugin {
       acodeLanguageClient.format(),
     );
   }
+  get settingsMenuLayout() {
+    // let settings = this.settings;
+    return {
+      list: [
+        {
+          index: 0,
+          key: "serverPath",
+          promptType: "text",
+          prompt:"Change the serverPath before running.",
+          text: "Kotlin Executable File Path",
+          value: this.settings.serverPath,
+        },
+      ],
+      
+      cb: (key, value) => {
+        AppSettings.value[plugin.id][key] = value;
+        AppSettings.update();
+      },
+    };
+  }
+  
   get settings() {
     if (!window.acode) {
       return this.defaultSettings;
     }
-    const AppSettings = acode.require("settings");
     let value = AppSettings.value[plugin.id];
     if (!value) {
       value = AppSettings.value[plugin.id] = this.defaultSettings;
@@ -44,7 +66,7 @@ class AcodePlugin {
         "/data/data/com.termux/files/home/.local/share/nvim/mason/bin/kotlin-language-server",
     };
   }
-  async destroy() { }
+  async destroy() {}
 }
 
 if (window.acode) {
@@ -58,7 +80,9 @@ if (window.acode) {
       acodePlugin.baseUrl = baseUrl;
       await acodePlugin.init($page, cacheFile, cacheFileUrl);
     },
+    acodePlugin.settingsMenuLayout,
   );
+
   acode.setPluginUnmount(plugin.id, () => {
     acodePlugin.destroy();
   });
